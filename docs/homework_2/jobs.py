@@ -84,7 +84,7 @@ tedx_dataset_agg = tedx_dataset_agg.join(watch_next_dataset_agg, tedx_dataset_ag
 tedx_dataset_agg.printSchema()
 
 
-mongo_uri = "mongodb+srv://admin:admin@cluster0.ce6qbwg.mongodb.net"
+mongo_uri = "mongodb+srv://xxxx:xxxx@xxxx.xxxx.mongodb.net"
 print(mongo_uri)
 
 write_mongo_options = {
