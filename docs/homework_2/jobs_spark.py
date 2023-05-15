@@ -73,6 +73,10 @@ watch_next_dataset_path = "s3://unibg-2023-dati-tedx/watch_next_dataset.csv"
 watch_next_dataset = spark.read.option("header","true").csv(watch_next_dataset_path)
 
 
+## REMOVE DUPLICATES
+watch_next_dataset = watch_next_dataset.dropDuplicates()
+
+
 # CREATE THE AGGREGATE MODEL, ADD WATCH_NEXT TO TEDX_DATASET
 watch_next_dataset_agg = watch_next_dataset.groupBy(col("idx").alias("idx_ref")).agg(collect_list(struct("url", "watch_next_idx")).alias("watch_nexts"))
 watch_next_dataset_agg.printSchema()
