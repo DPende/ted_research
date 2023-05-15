@@ -66,6 +66,15 @@ module.exports.get_correlated_papers_by_idx = async (event, context, callback) =
         console.log('=> get_all talks');
         const talks = await talk.findById(body.idx);
 
+        console.log(talks)
+
+        if (!(talks.papers >= 0)) {
+            callback(null, {
+                statusCode: 200,
+                body: JSON.stringify(talks.papers),
+            });
+        }
+
         var tagsForQuery = talks.tags.map(tag => `(${tag})`);
 
         const uri = `https://api.core.ac.uk/v3/search/journals/?q=${encodeURIComponent(tagsForQuery.join('OR'))}`
@@ -74,7 +83,9 @@ module.exports.get_correlated_papers_by_idx = async (event, context, callback) =
 
         callback(null, {
             statusCode: 200,
-            body: JSON.stringify(result),
+            body: JSON.stringify(result.results.map(item => {
+                return { title: item.title, identifiers: item.identifiers }
+            })),
         });
     }
     catch (error) {
