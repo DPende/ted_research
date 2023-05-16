@@ -12,3 +12,13 @@ In un mondo in cui la conoscenza è sempre più richiesta, ma l'informazione è 
 ## Homework 01
 - [Presentazione formato PPTX](./docs/homework_1/TEDresearch.pptx)
 - [Presentazione formato PDF](./docs/homework_1/TEDresearch.pdf)
+
+## Homework 02
+- [Presentazione formato PPTX](./docs/homework_2/ted_research_2.pptx)
+- [Presentazione formato PDF](./docs/homework_2/ted_research_2.pdf)
+- [Scripts](./docs/homework_2/scripts/)
+
+## Homework 03
+- [Presentazione formato PPTX](./docs/homework_3/ted_research_3.pptx)
+- [Presentazione formato PDF](./docs/homework_3/ted_research_3.pdf)
+- [Scripts](./docs/homework_3/scripts/)
